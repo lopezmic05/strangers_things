@@ -9,8 +9,27 @@ export const getAllPosts = async () => {
 }
 
 export const registerPerson = async (event) => {
+    const registerUser = event.target[0].value
+    const registerPassword = event.target[1].value
+    console.log('get he event inputs', registerUser, registerPassword)
     console.log(`${API_URL}${COHORT}/users/register`)
-    fetch(`${API_URL}${COHORT}/users/register`)
+    const response = await 
+    fetch(`${API_URL}${COHORT}/users/register`,
+        {
+            method: 'POST',
+            headers: {
+                'Content-Type' : 'application/json'
+            },
+            body: JSON.stringify({
+                user: {
+                    username: 'spidercuz28',
+                    password: 'we0utsid3'
+                }
+            })
+
+        }
+    )
+    console.log(response)
 }
 
 

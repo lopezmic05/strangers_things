@@ -1,15 +1,17 @@
 import React from "react"
 import { registerPerson } from "../api"
+// import Navbar from "./Navbar"
 
 
 async function handleSubmit(event){
     event.preventDefault()
     console.log("this is the event", event)
-    registerPerson(event)
+    const backFromAPI = await registerPerson(event)
 }
 const App = () => {
     return(<div>
-    <h1>Stangers Things</h1>
+    {/* <Navbar /> */}
+    <h1>Stanger's Things</h1>
     <form onSubmit={handleSubmit}>
         <label>UserName</label>
         <input id="username" placeholder="Enter Username"></input>
