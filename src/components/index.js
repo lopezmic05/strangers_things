@@ -1,5 +1,10 @@
 export { default as App } from './App'
+export { default as AddPosts } from './AddPosts'
+export { default as DeletePosts } from './DeletePosts'
 export { default as Login } from './Login'
 export { default as Navbar } from './Navbar'
+export { default as NewMessage } from './NewMessage'
 export { default as Post } from './Post'
+export { default as Profile } from './Profile'
 export { default as Register } from './Register'
+import "./style.css"

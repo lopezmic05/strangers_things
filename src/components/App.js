@@ -1,27 +1,59 @@
-import React from "react"
-import { registerPerson } from "../api"
-// import Navbar from "./Navbar"
+import React, { useEffect, useState } from "react";
+import { Route, Link, Routes } from "react-router-dom";
+import {
+  Login,
+  Logout,
+  Register,
+  Navbar,
+  Posts,
+  Profile,
+  NewPost,
+  SinglePost,
+  LoadingPage,
+  MessageForm,
+  Search
+} from "./";
 
+import "./App.css";
 
-async function handleSubmit(event){
-    event.preventDefault()
-    console.log("this is the event", event)
-    const backFromAPI = await registerPerson(event)
-}
 const App = () => {
-    return(<div>
-    {/* <Navbar /> */}
-    {/* <form onSubmit={handleSubmit}>
-        <label>UserName</label>
-        <input id="username" placeholder="Enter Username"></input>
-        <label>PassWord</label>
-        <input id="password" placeholder="Enter PassWord"></input>
-        <button type="submit">Login!</button>
-        <button type="submit">Don't have an account? Create one here.</button>
+  const [postValue, setPostValue] = useState("");
+  const [messages, setMessages] = useState([]);
+  const [posts, setPosts] = useState([]);
 
-    </form> */}
-    
-    </div>)
-}
+  return (
+    <div>
+      <Title />
+      <Routes>
+        <Route exact path="/Register" element={<Register />}></Route>
+        <Route exact path="/Login" element={<Login />}></Route>
+        <Route
+          exact
+          path="/Posts"
+          element={
+            <Posts
+              postValue={postValue}
+              setPostValue={setPostValue}
+              posts={posts}
+              setPosts={setPosts}
+            />
+          }
+        ></Route>
+        <Route
+          exact
+          path="/Profile"
+          element={<Profile 
+            messages={messages} 
+            setMessages={setMessages} />}
+        ></Route>
+        <Route exact path="/NewPost" element={<NewPost />}></Route>
+        <Route exact path="/Logout" element={<Logout />}></Route>
+        <Route exact path="/MessageForm" element={<MessageForm />}></Route>
+        <Route exact path="/Search" element={<Search/>}></Route>
 
-export default App
+      </Routes>
+    </div>
+  );
+};
+
+export default App;

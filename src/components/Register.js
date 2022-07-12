@@ -1,10 +1,48 @@
-import React from "react"
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import {createUser} from "../api"
+import { Link } from 'react-router-dom';
 
-const Register = () => {
-    return (
-        <div className="register">
-            <h1>Welcome to Stranger's Things!</h1>
-        </div>
-    )
-}
-export default Register
+export const cohortName = "2206-FTB-ET-WEB-FT";
+export const BASE_URL = `https://strangers-things.herokuapp.com/api/`;
+
+
+export default function Register(){
+    let navigate = useNavigate();
+    const[newUsername, setnewUsername] = useState('');
+    const [password, setPassword] = useState('');
+    const [confimPassword, setConfirmPassword] = useState('')
+
+async function handleSubmit(event){
+    event.preventDefault()
+    console.log("this is handle submit for register");
+    const token = await createUser (newUsername, password)
+    localStorage.setItem("token", token)
+    console.log(token, "This is token from register");
+    navigate("/Login")
+} 
+    return(<>
+    <form onSubmit ={handleSubmit} id ="loginPage">
+        <h1>REGISTER</h1>
+        <label> Enter New Username </label>
+            <input id = "username"  
+            placeholder = "Enter newUsername" 
+            type = "text" minLength = "6"
+            onChange={event => setnewUsername(event.target.value)}>
+            </input>
+            <label> Enter New Password</label>
+            <input id = "password" 
+            placeholder = "Enter Password" 
+            type = "password" minLength = "6" 
+            onChange={event => setPassword(event.target.value)}>
+            </input>
+            <label> Confirm New Password</label>
+            <input id = "confirmPassword"  
+            placeholder = "Confirm Password" 
+            type = "password" minLength = "6" 
+            onChange={event => setConfirmPassword(event.target.value)}>
+            </input>
+        <div></div>
+        <button id ="loginButton" type = "submit">Create Account</button>
+        <Link to = "/Posts"> <button id = "loginButton">View As Guest</button></Link>
+        </form></>)}
