@@ -11,15 +11,15 @@ async function handleSubmit(event){
 const App = () => {
     return(<div>
     {/* <Navbar /> */}
-    <h1>Stanger's Things</h1>
-    <form onSubmit={handleSubmit}>
+    {/* <form onSubmit={handleSubmit}>
         <label>UserName</label>
         <input id="username" placeholder="Enter Username"></input>
         <label>PassWord</label>
         <input id="password" placeholder="Enter PassWord"></input>
         <button type="submit">Login!</button>
+        <button type="submit">Don't have an account? Create one here.</button>
 
-    </form>
+    </form> */}
     
     </div>)
 }
