@@ -1,17 +1,16 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Route, Link, Routes } from "react-router-dom";
 import {
   Login,
   Logout,
   Register,
-  Navbar,
+  Title,
   Posts,
   Profile,
   NewPost,
   SinglePost,
-  LoadingPage,
   MessageForm,
-  Search
+  Search,
 } from "./";
 
 import "./App.css";
@@ -25,11 +24,11 @@ const App = () => {
     <div>
       <Title />
       <Routes>
-        <Route exact path="/Register" element={<Register />}></Route>
-        <Route exact path="/Login" element={<Login />}></Route>
+        <Route exact path='/Register' element={<Register />}></Route>
+        <Route exact path='/Login' element={<Login />}></Route>
         <Route
           exact
-          path="/Posts"
+          path='/Posts'
           element={
             <Posts
               postValue={postValue}
@@ -41,16 +40,13 @@ const App = () => {
         ></Route>
         <Route
           exact
-          path="/Profile"
-          element={<Profile 
-            messages={messages} 
-            setMessages={setMessages} />}
+          path='/Profile'
+          element={<Profile messages={messages} setMessages={setMessages} />}
         ></Route>
-        <Route exact path="/NewPost" element={<NewPost />}></Route>
-        <Route exact path="/Logout" element={<Logout />}></Route>
-        <Route exact path="/MessageForm" element={<MessageForm />}></Route>
-        <Route exact path="/Search" element={<Search/>}></Route>
-
+        <Route exact path='/NewPost' element={<NewPost />}></Route>
+        <Route exact path='/Logout' element={<Logout />}></Route>
+        <Route exact path='/MessageForm' element={<MessageForm />}></Route>
+        <Route exact path='/Search' element={<Search />}></Route>
       </Routes>
     </div>
   );

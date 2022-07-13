@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { deletePosts, getPosts } from "../api";
-import {MessageForm, Search} from "./";
+import { MessageForm, Search } from ".";
 
 import "./App.css";
 
-const Posts = ({ postValue, setPostValue }) => {
+const Post = ({ postValue, setPostValue }) => {
   const navigate = useNavigate();
   const [posts, setPosts] = useState([]);
   const authToken = localStorage.getItem("token") ? true : false;
@@ -34,28 +34,27 @@ const Posts = ({ postValue, setPostValue }) => {
   const postMapping = posts.map((post, index) => {
     let postId = posts[index]._id;
     return (
-
-          <div key={`Posts${index}`}>
-          <div id="TitleBox">
-          <div id="titleContainer">
-            <h1 id="postTitle">{post.title}</h1>
-            <h2 id="additionalPost">PRICE: {post.price}</h2>
-            <h4 id="additionalPost">TIME POSTED: {post.updatedAt}</h4>
-            <h4 id="additionalPost">POST BY: {post.author.username}</h4>
-            <h3 id="additionalPost">DESCRIPTION: {post.description}</h3>
-            <MessageForm postId={postId} deletePost = {deletePost} />
-            {authToken === true ?  (
+      <div key={`Posts${index}`}>
+        <div id='TitleBox'>
+          <div id='titleContainer'>
+            <h1 id='postTitle'>{post.title}</h1>
+            <h2 id='additionalPost'>PRICE: {post.price}</h2>
+            <h4 id='additionalPost'>TIME POSTED: {post.updatedAt}</h4>
+            <h4 id='additionalPost'>POST BY: {post.author.username}</h4>
+            <h3 id='additionalPost'>DESCRIPTION: {post.description}</h3>
+            <MessageForm postId={postId} deletePost={deletePost} />
+            {authToken === true ? (
               <button
                 onClick={() => {
                   catchId(post._id), deletePost(post._id);
                 }}
-                id="deleteButton"
+                id='deleteButton'
               >
                 Delete Post
               </button>
             ) : (
-              <Link to="/Login">
-                <button id="null">Login to View Post</button>
+              <Link to='/Login'>
+                <button id='null'>Login to View Post</button>
               </Link>
             )}
           </div>
@@ -65,16 +64,20 @@ const Posts = ({ postValue, setPostValue }) => {
   });
 
   return (
-    <div id = "postsDiv">
-      <Search postMapping = {postMapping} posts = {posts} setPosts ={setPosts}/>
-      <h1 id = "postWelcome">Welcome to Posts!
-      {authToken === true ? (<Link to = "/Profile"><button id = "deleteButton"> Back to Profile </button></Link>): null}</h1>
+    <div id='postsMain'>
+      <Search postMapping={postMapping} posts={posts} setPosts={setPosts} />
+      <h1 id='postWelcome'>
+        Check These Posts Out!
+        {authToken === true ? (
+          <Link to='/Profile'>
+            <button id='backButton'> Back to Profile </button>
+          </Link>
+        ) : null}
+      </h1>
 
       {postMapping}
-      
-      {authToken === true ? (<Link to = "/Profile"><button id = "deleteButton"> Back to Profile </button></Link>): null}
     </div>
   );
 };
 
-export default Posts;
+export default Post;

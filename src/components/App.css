@@ -1,0 +1,261 @@
+h1 {
+  font-size: 64px;
+  text-align: center;
+  color: #333;
+  font-family: "quicksand", sans-serif;
+}
+h2 {
+  text-align: left;
+  color: #333;
+  font-family: "quicksand", sans-serif;
+}
+h3 {
+  width: 500px;
+  font-family: "quicksand", sans-serif;
+}
+
+h4 {
+  text-align: left;
+  color: #333;
+  font-family: "quicksand", sans-serif;
+}
+
+#messageBox {
+  width: 95%;
+  height: 400px;
+  margin: auto;
+}
+
+#postBox {
+  height: 200px;
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  margin-bottom: 3%;
+  margin-top: 3%;
+}
+
+p {
+  font-family: "quicksand", sans-serif;
+}
+#logBackIn {
+  color: #5e15f1;
+  display: flex;
+  justify-content: center;
+  font-family: "quicksand", sans-serif;
+  font-size: 10px;
+  margin: auto;
+  padding: 5px;
+  border-radius: 50px;
+}
+#logBackIn,
+a {
+  text-decoration: none;
+}
+
+#logBackIn:hover {
+  cursor: pointer;
+  opacity: 50%;
+}
+
+#newPost,
+#singlePost,
+#logOut {
+  width: auto;
+  font-family: "quicksand", sans-serif;
+  font-size: 10px;
+  color: #5e15f1;
+  padding: 5px;
+  margin-left: 20px;
+  border-radius: 50px;
+  text-decoration: none;
+}
+
+#new-post-input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 10px auto;
+  padding-bottom: 20px;
+}
+
+#new-submit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 50px auto;
+  padding: 12px;
+  border-radius: 50px;
+  color: #5e15f1;
+}
+#new-submit:hover {
+  cursor: pointer;
+  opacity: 50%;
+}
+
+#newPost {
+  margin-left: 5%;
+}
+
+#newPost:hover {
+  opacity: 50%;
+}
+#singlePost:hover {
+  opacity: 50%;
+}
+#logOut:hover {
+  opacity: 50%;
+}
+
+#TitleBox {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5%;
+}
+
+#postTitle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+  color: #333;
+  font-family: "quicksand", sans-serif;
+  margin-bottom: 10px;
+}
+
+#titleContainer {
+  border-bottom: 1px solid #f2f2f2;
+}
+
+#backButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "quicksand", sans-serif;
+  font-size: 18px;
+  color: #5e15f1;
+  margin-top: 15px;
+  margin-left: 400px;
+  border-radius: 50px;
+}
+
+#backButton:hover {
+  opacity: 50%;
+  cursor: pointer;
+}
+
+#deleteButton {
+  width: 20%;
+  font-family: "quicksand", sans-serif;
+  font-size: 18px;
+  color: #5e15f1;
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+  margin-left: 40%;
+  margin-bottom: 10px;
+  border-radius: 50px;
+}
+#deleteButton:hover {
+  cursor: pointer;
+  opacity: 50%;
+}
+
+#null {
+  width: 50%;
+  font-family: "quicksand", sans-serif;
+  font-size: 20px;
+  color: #5e15f1;
+  background-color: #eee;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  margin-left: 100px;
+  margin-bottom: 20px;
+  text-decoration: none;
+  border-radius: 50px;
+}
+#loading-page-main {
+  background-color: #eee;
+  border: 5px solid #333;
+  height: 200px;
+  width: 400px;
+  margin: auto;
+  margin-top: 10%;
+  display: flex;
+  justify-content: center;
+}
+#loadingPage {
+  font-family: "quicksand", sans-serif;
+  color: #5e15f1;
+  border: none;
+  background-color: #eee;
+}
+
+#loadingPageButton {
+  margin-top: 170%;
+  margin-right: 570%;
+  width: 100px;
+  font-family: "quicksand", sans-serif;
+  font-size: 15px;
+  color: #5e15f1;
+  background-color: #eee;
+  align-items: center;
+}
+
+#messageForm {
+  font-size: 18px;
+  color: #5e15f1;
+}
+
+#messageInput {
+  font-size: 12px;
+  height: 18px;
+  width: 200px;
+}
+#titleMessage {
+  margin: auto;
+}
+
+#submitButton {
+  width: 100px;
+  height: 25px;
+  color: #5e15f1;
+  font-family: "quicksand", sans-serif;
+  border-radius: 50px;
+  margin-left: 20px;
+}
+
+#submitButton:hover {
+  cursor: pointer;
+  opacity: 50%;
+}
+
+#inboxMessage {
+  border-bottom: 3px solid #333;
+  margin-top: 10px;
+  margin-bottom: 40px;
+}
+
+#postsMain {
+  width: 50%;
+  height: 500px;
+  margin: auto;
+  margin-top: 50px;
+}
+
+#postWelcome {
+  margin-bottom: 20px;
+  width: 100%;
+  height: 100px;
+  text-align: center;
+  color: #5e15f1;
+  border-bottom: 1px solid #f2f2f2;
+  font-family: "quicksand", sans-serif;
+  font-size: 50px;
+}

@@ -1,10 +1,10 @@
 export { default as App } from './App'
-export { default as AddPosts } from './AddPosts'
-export { default as DeletePosts } from './DeletePosts'
 export { default as Login } from './Login'
-export { default as Navbar } from './Navbar'
-export { default as NewMessage } from './NewMessage'
-export { default as Post } from './Post'
+export { default as Logout } from "./Logout";
+export { default as MessageForm } from "./MessageForm";
+export { default as NewPost } from "./NewPost";
+export { default as Posts } from './Posts'
 export { default as Profile } from './Profile'
 export { default as Register } from './Register'
-import "./style.css"
+export { default as Search } from "./Search";
+export { default as Title } from './Title'
